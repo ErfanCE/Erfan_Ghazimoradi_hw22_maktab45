@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/modal.css">
+    <link rel="stylesheet" href="/stylesheets/panel.css">
+</head>
+<body>
+    <div id="modal-container">
+        <div class="modal-background">
+            <div class="modal">
+                <!-- alert -->
+                <button class="close-btn">&#10005;</button>
+
+                <%- include('./blogger-info.ejs') %>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <%- include('../partial/navigation.ejs') %>
+        
+        <table id="bloggers">
+            <tr>
+                <th colspan="2">Username</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Gender</th>
+                <th>Phone number</th>
+                <th>Role</th>
+                <th>CreatedAt</th>
+            </tr>
+    
+            <% bloggers.forEach(blogger => { %>
+                <tr id="two" class="button">
+                    <td>
+                        <% if (blogger && blogger.avatar !== 'default-avatar.png') { %>
+                            <img src="/images/avatars/bloggers/<%= blogger.avatar %>" alt="blogger-avatar">
+                        <% } else { %>
+                            <img src="/images/avatars/default-avatar.png" alt="blogger-avatar">
+                        <% } %>
+                    </td>
+                    <td><%= blogger.username %></td>
+                    <td><%= blogger.firstname %></td>
+                    <td><%= blogger.lastname %></td>
+                    <td><%= blogger.gender %></td>
+                    <td><%= blogger.phoneNumber %></td>
+                    <td><%= blogger.role %></td>
+                    <td><%= blogger.createdAt %></td>
+                </tr>
+            <% }) %>
+        </table>
+    </div>
+
+
+    <button id="two" class="button create-btn">Edit Article</button>
+
+    <!-- scripts -->
+    <script src="/javascripts/jquery-3.5.1.min.js"></script>
+    <script src="/javascripts/modal.js"></script>
+    <script src="/javascripts/admin-panel.js"></script>
+</body>
+</html>

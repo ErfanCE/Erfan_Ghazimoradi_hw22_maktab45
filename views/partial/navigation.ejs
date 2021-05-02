@@ -1,7 +1,32 @@
-<nav>
-    <ul>
-        <li>home</li>
-        <li>about</li>
-        <li>contact</li>
-    </ul>
-</nav>
+<div class="profile">
+    <% if (blogger && blogger.avatar !== 'default-avatar.png') { %>
+        <div class="info">
+            <img src="/images/avatars/bloggers/<%= blogger.avatar %>" alt="avatar">
+            <p>welcome <%= blogger.username %></p>
+        </div>
+    <% } else { %>
+        <div class="info">
+            <img src="/images/avatars/default-avatar.png" alt="avatar">
+            <% if (blogger) { %>
+                <p>welcome <%= blogger.username %></p>
+            <% } else { %>
+                <p>Welcome, Join our community for more feature. <a href="/account">Join</a></p>
+            <% } %>
+        </div>
+    <% } %>
+
+    <nav>
+        <% if (blogger && blogger.role === 'admin') { %>
+            <a href="/admin">Admin Panel</a>
+        <% } %>
+        <a href="/account">Dashboard</a>
+        <a href="/account/article">My Articles</a>
+        <a href="/explore">Explore</a>
+
+        <% if (blogger) { %>
+            <a href="/authentication/logout">Logout</a>
+        <% } else { %>
+            <a href="/authentication/login">Login</a>
+        <% } %>
+    </nav>
+</div>

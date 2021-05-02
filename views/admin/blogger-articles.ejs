@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>articles page</title>
+</head>
+<body>
+    <% articles.forEach(article => { %>
+        <ul>
+            <li>article title: <%= article.title %> </li>
+            <li>article description: <%= article.description %> </li>
+            <li>article author: <%= article.blogger %> </li>
+            <li>article create at: <%= article.createdAt %> </li>
+
+            <a href="/explore/<%= article.blogger %>/<%= article.title %>">more detail</a>
+            <form action="/<%= article.blogger %>/<%= article.title %>" id="removeArticle">
+                <button type="submit">remove article</button>
+            </form>
+        </ul>
+    <% }) %>
+
+    <script src="/javascripts/jquery-3.5.1.min.js"></script>
+    <script src="/javascripts/blogger-articles.js"></script>
+</body>
+</html>

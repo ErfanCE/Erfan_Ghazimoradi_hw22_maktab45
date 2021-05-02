@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: none;
+}
+
+input, select {
+    display: block;
+    /* margin-bottom: 12px; */
+}
+
+.sub-header {
+    margin-top: -20px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+}
+
+.avatar-panel {
+    background-color: #ccc;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    padding-bottom: 0.5rem;
+    width: 55%;
+    float: left;
+    margin-right: 2rem;
+}
+.avatar-panel > form{
+    display: inline;
+}
+.avatar-panel button {
+    margin-top: 0;
+}
+.avatar-panel > form input {
+    display: inline;
+}
+
+.linker {
+    text-decoration: none;
+    background-color: rgb(255, 145, 0);
+    padding: 1rem 1.5rem;
+    color: #fff;
+    border-radius: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.98rem;
+}
+
+
+.file-error {
+    width: 100%;
+    color: hsl(0, 100%, 50%);
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.v2 {
+    display: inline-block;
+    background-color: hsl(212, 79%, 44%);
+    margin-bottom: 1.5rem;
+}
+
+
+
+.profile  {
+    background-color: hsl(240, 13%, 15%);
+    border-radius: 1rem;
+    padding: 1.2rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.profile p {
+    color: #f9f9f9;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.profile {
+    overflow: hidden;
+}
+
+.profile .info {
+    float: left;
+    width: 40%;
+}
+nav {
+    /* background-color: #888; */
+    width: 60%;
+    float: right;
+    padding-top: 5.8rem;
+    text-align: right;
+}
+
+nav > a {
+    /* text-align: right; */
+    color: #eee;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+nav > a:hover {
+    background-color: rgb(21, 21, 32);
+}
+
+p.spec-p {
+    margin-top: 3rem;
+}
